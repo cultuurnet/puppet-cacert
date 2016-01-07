@@ -8,7 +8,6 @@ class cacert::params {
     'Ubuntu': {
       case $::operatingsystemrelease {
         '14.04': {
-          $package_name = 'python3-borgbackup'
         }
         default: {
           fail("Ubuntu ${::operatingsystemrelease} not supported")
