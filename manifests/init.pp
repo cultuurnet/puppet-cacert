@@ -3,6 +3,10 @@ class cacert inherits ::cacert::params {
 
   include wget
 
+  file { '/usr/local/share/ca-certificates/cacert.org':
+    ensure => directory
+  }
+
   wget::fetch { 'http://www.cacert.org/certs/root.crt':
     destination => '/usr/local/share/ca-certificates/cacert.org',
     timeout     => 5,
@@ -24,5 +28,5 @@ class cacert inherits ::cacert::params {
     refreshonly => true
   }
 
-  Class['wget'] -> Wget::Fetch <| tag == 'cacert' |> -> Exec['CAcert update-ca-certificates']
+  Class['wget'] -> File['/usr/local/share/ca-certificates/cacert.org'] -> Wget::Fetch <| tag == 'cacert' |> -> Exec['CAcert update-ca-certificates']
 }
