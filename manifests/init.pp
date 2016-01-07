@@ -8,7 +8,7 @@ class cacert inherits ::cacert::params {
   }
 
   wget::fetch { 'http://www.cacert.org/certs/root.crt':
-    destination => '/usr/local/share/ca-certificates/cacert.org',
+    destination => '/usr/local/share/ca-certificates/cacert.org/root.crt',
     timeout     => 5,
     verbose     => false,
     notify      => Exec['CAcert update-ca-certificates'],
@@ -16,7 +16,7 @@ class cacert inherits ::cacert::params {
   }
 
   wget::fetch { 'http://www.cacert.org/certs/class3.crt':
-    destination => '/usr/local/share/ca-certificates/cacert.org',
+    destination => '/usr/local/share/ca-certificates/cacert.org/class3.crt',
     timeout     => 5,
     verbose     => false,
     notify      => Exec['CAcert update-ca-certificates'],
