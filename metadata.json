@@ -8,10 +8,6 @@
   "project_page": "https://github.com/cultuurnet/puppet-cacert",
   "issues_url": "https://github.com/cultuurnet/puppet-cacert/issues",
   "dependencies": [
-    {
-      "name": "maestrodev-wget",
-      "version_requirement": ">= 1.4.0"
-    }
   ],
   "operatingsystem_support": [
     {
